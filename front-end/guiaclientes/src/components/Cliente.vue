@@ -3,7 +3,9 @@
         
         <!-- <input type="text" :value="nome" name="" id="">  usado para referenciar uma variável dentro do campos de textos-->
 
-        <input type="text" :value="descricao">
+        <input type="text" v-model="nome" name="" id="">
+        <input type="text" v-model="descricao">
+
         <h2>Cliente :{{ nome }} </h2>   
         <h3>Descrição do Cliente: <p> {{descricao}} </p> </h3> 
         {{ 2 + 2 * 4 }}
