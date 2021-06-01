@@ -1,14 +1,14 @@
 <template>
     <div id="cliente">
-        
-        <!-- <input type="text" :value="nome" name="" id="">  usado para referenciar uma variável dentro do campos de textos-->
 
-        <input type="text" v-model="nome" name="" id="">
-        <input type="text" v-model="descricao">
+        <h4>Nome : {{cliente.nome}} </h4>        
+        <hr>
+            Idade: {{cliente.idade}}
+        <hr>
+        Numero: {{numero}}
+        <hr>
+        email: {{cliente.email}}
 
-        <h2>Cliente :{{ nome }} </h2>   
-        <h3>Descrição do Cliente: <p> {{descricao}} </p> </h3> 
-        {{ 2 + 2 * 4 }}
     </div>
 
 </template>
@@ -17,17 +17,26 @@
     export default {
         data(){
             return {
-                nome: "Aldo",
-                numero: "",
-                email: "",
-                iddade: "",
-                descricao: "lorem IPSUM E TAL"
+
             }
+        },
+        props:{
+            nome:String,
+            email:String,
+            idade: Number,
+            cliente:Object
         }
     }
 
 </script>
 
 <style scoped>
-  
+
+    #cliente {
+        background-color: #ececec;
+        max-width: 600px;
+        padding: 30px;
+        margin: 4px; 
+    }
+
 </style>
