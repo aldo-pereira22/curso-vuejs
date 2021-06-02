@@ -8,11 +8,10 @@
 
 
 
-    <Cliente :cliente="clienteAldo" />
-
-    <Cliente :cliente="clienteAldo" />
-    <Cliente :cliente="clienteAldo" />
-    <Cliente nome="Maria" email="maria@gmail" idade="40" />
+    <Cliente :cliente="clienteAldo" :showIdade="true" />
+    <Cliente :cliente="clienteAldo" :showIdade="true" />
+    <Cliente :cliente="clienteAldo" :showIdade="false" />
+    <Cliente :cliente="clienteAldo" :showIdade="false" />
     
   </div>
 </template>
@@ -31,6 +30,27 @@ export default {
         email: "aldo@gmail.com",
         idade: 30
       },
+      clientes:[
+        { 
+        
+        nome:"Aldo",
+        email: "aldo@gmail.com",
+        idade: 22
+
+        },
+        {
+        nome:"João",
+        email: "jao@gmail.com",
+        idade: 21
+
+        },
+        {
+        nome:"Marcos",
+        email: "marcos@gmail.com",
+        idade: 23
+
+        }
+      ],
       clienteJoao: {
         nome:"João",
         email: "João@gmail.com",
