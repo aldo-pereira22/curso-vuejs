@@ -5,7 +5,8 @@
 
             <p> email: {{cliente.email}} </p>
             <p>  Idade: {{cliente.idade}} </p>
-            <button @click="mudarCor($event)" >Mudar a cor</button>
+<!--        <button   @click="mudarCor($event)"   >Mudar a cor</button> -->
+            <button @click="emitirEventoDelete"> Deletar </button>
   
 
     </div>
@@ -28,6 +29,14 @@
                 console.log($event.type);
   
                 this.isPremium = !this.isPremium;
+            },
+            emitirEventoDelete: function(){
+                alert("PASSANDO O EVENTO"  )
+                this.$emit("delete", {idCliente: this.cliente.id ,curso:"Formação em node:  ", emPromocao: true, componente: this})
+
+            },
+            testar: function(){
+                alert("Testando para valer")
             }
         }
 }
