@@ -2,17 +2,25 @@
   <div id="app">
 
 
-    <input placeholder="Nome" type="text" v-model="clienteAldo.nome"><br>
-    <input placeholder="Idade" type="text" v-model="clienteAldo.idade"> <br>
-    <input placeholder="Email" type="text" v-model="clienteAldo.email">
+        <h3>Cadastro:</h3>
+        <input type="text" placeholder="nome" v-model="nomeField" name="" id=""> <br><br>
+        <input type="email" placeholder="email" v-model="emailField"  name="" id=""> <br><br>
+        <input type="number" placeholder="idade" v-model="idadeField" ><br><br>
+        <button @click="cadastrarUsuario"> Cadastrar</button>
+
+    <hr>
+
+ 
+ 
+
+    <div v-for=" (cliente, index) in clientes" :key="cliente.id">
+      <h4> {{ index + 1 }} </h4>
+       <Cliente :cliente="cliente" /> 
+       <hr>
+    </div>  
 
 
-
-    <Cliente :cliente="clienteAldo" :showIdade="true" />
-    <Cliente :cliente="clienteAldo" :showIdade="true" />
-    <Cliente :cliente="clienteAldo" :showIdade="false" />
-    <Cliente :cliente="clienteAldo" :showIdade="false" />
-    
+  
   </div>
 </template>
 
@@ -20,48 +28,38 @@
   import Cliente from './components/Cliente'
 
 
+
 export default {
   name: 'App',
   data(){
     return{
-      nomeAldo:"Aldo Pereira",
-      clienteAldo: {
-        nome:"Aldo",
-        email: "aldo@gmail.com",
-        idade: 30
-      },
+      nomeField:"",
+      emailField:"",
+      idadeFiled: 0,
+      
       clientes:[
         { 
-        
+        id: 2,
         nome:"Aldo",
         email: "aldo@gmail.com",
         idade: 22
 
-        },
-        {
-        nome:"João",
-        email: "jao@gmail.com",
-        idade: 21
-
-        },
-        {
-        nome:"Marcos",
-        email: "marcos@gmail.com",
-        idade: 23
-
         }
-      ],
-      clienteJoao: {
-        nome:"João",
-        email: "João@gmail.com",
-        idade: 20
+      ]
 
-      }
     }
   },
   components: {
     Cliente
     
+  },
+  methods:{
+    cadastrarUsuario:function(){
+      this.clientes.push({nome: this.nomeField, email: this.emailField, idade: this.idadeFiled, id:Date.now})
+      this.nomeField = "";
+      this.emailField = "";
+      this.idade = "";
+    }
   }
 }
 </script>
