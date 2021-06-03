@@ -35,7 +35,7 @@ export default {
     return{
       nomeField:"",
       emailField:"",
-      idadeFiled: 0,
+      idadeField: 0,
       
       clientes:[
         { 
@@ -55,10 +55,10 @@ export default {
   },
   methods:{
     cadastrarUsuario:function(){
-      this.clientes.push({nome: this.nomeField, email: this.emailField, idade: this.idadeFiled, id:Date.now})
+      this.clientes.push({nome: this.nomeField, email: this.emailField, idade:this.idadeField, id:Date.now})
       this.nomeField = "";
       this.emailField = "";
-      this.idade = "";
+      this.idade = 0;
     }
   }
 }
