@@ -3,10 +3,11 @@
         <h4>Nome : {{cliente.nome}} </h4>        
         <hr>
 
-            <p> email: {{cliente.email}} </p>
+            <p> email: {{ processarEmail(cliente.email)    }} </p>
             <p>  Idade: {{cliente.idade}} </p>
 <!--        <button   @click="mudarCor($event)"   >Mudar a cor</button> -->
             <button @click="emitirEventoDelete"> Deletar </button>
+            <h4> id Especia: {{idEspecial}} </h4>
   
 
     </div>
@@ -14,6 +15,7 @@
 </template>
 
 <script>
+
     export default {
         data(){
             return {
@@ -37,6 +39,18 @@
             },
             testar: function(){
                 alert("Testando para valer")
+            },
+            
+            
+            processarEmail: function(value){
+                    return value.toUpperCase();
+             }
+
+            
+        }, 
+        computed: {
+            idEspecial: function(){
+                return (this.cliente.email + this.cliente.nome + this.cliente.id).toUpperCase();
             }
         }
 }
