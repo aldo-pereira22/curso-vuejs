@@ -1,6 +1,10 @@
 <template>
   <div id="app">
 
+    <div class="buttons">
+      <button class="button is-primary">Primary</button>
+      <button class="button is-link">Link</button>
+    </div>
 
         <h3>Cadastro:</h3>
         <small id="nomeErro" v-show="deuErro"> O nome é inválido: Tente novamente</small> <br>
